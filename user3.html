@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="newuser3.css">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="POST" name="google-sheet3">
+        <div class="header">
+            <h1>REGISTER</h1>
+            <p>Please fill in the form for the Updatation of Vehicle</p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-25">
+                    <label for="name">Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="name" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="Email">Email</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="email" required>
+                </div>
+            </div>
+            <div class=" row">
+                <div class="col-25">
+                    <label for="Phone No.">Phone No.</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="phone" required>
+                </div>
+            </div>
+            <div class=" row">
+                <div class="col-25">
+                    <label for="staffno">Staff No.</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="staff" required>
+                </div>
+            </div>
+            <div class=" row">
+                <div class="col-25">
+                    <label for="Department">Department</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="dept" required>
+                </div>
+            </div>
+            <div class=" row">
+                <div class="col-25">
+                    <label for="Designation">Designation</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="designation" required>
+                </div>
+            </div>
+            <div class=" row">
+                <div class="col-25">
+                    <label for="Blood Group">Blood Group</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="blood group" required>
+                </div>
+            </div>
+            <div class=" row">
+                <div class="col-25">
+                    <label for="Address">Address</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="address" required>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-25">
+                    <label for="DL">Driving License </label>
+                </div>
+                <div class="col-75">
+                    <p>DL:</p>
+                    <input type="file" id="myFile" name="filename">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-75">
+                    <select id="Vehicle" name="Vehicle1">
+                        <option value="Car">2-wheeler</option>
+                        <option value="Bike/Scooty">4-wheeler</option>
+                    </select>
+                    <div class="col-25">
+                        <label for="Vehicle no. 1">Vehicle no.1</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="vehicle 1">
+                        <p>RC</p>
+                        <input type="file" id="myFile" name="filename">
+                        <p>INSURANCE</p>
+                        <input type="file" id="myFile" name="filename">
+                        <p>POLLUTION </p>
+                        <input type="file" id="myFile" name="filename">
+                    </div>
+                </div>
+
+            </div>
+            <div class=" row">
+                <div class="col-75">
+                    <select id="Vehicle" name="Vehicle2">
+                        <option value="Car">2-wheeler</option>
+                        <option value="Bike/Scooty">4-wheeler</option>
+                    </select>
+                    <div class="col-25">
+                        <label for="Vehicle no. 2">Vehicle no.2</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="vehicle 2">
+                        <p>RC</p>
+                        <input type="file" id="myFile" name="filename">
+                        <p>INSURANCE</p>
+                        <input type="file" id="myFile" name="filename">
+                        <p>POLLUTION </p>
+                        <input type="file" id="myFile" name="filename">
+                    </div>
+                </div>
+            </div>
+            <div class="submit">
+                <input type="submit" value="submit" name="submit">
+            </div>
+            <script>
+                const scriptURL = 'https://script.google.com/macros/s/AKfycbzc1D_MulVPj_En_gPcJsywFpe1RFCYX0oNMU6ROxi2J9M4uNkxyrASkXZmRpaHkGOPmw/exec'
+                const form = document.forms['google-sheet3']
+
+                form.addEventListener('submit', e => {
+                    e.preventDefault()
+                    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+                        .then(response => alert("Thanks for Contacting us..! We Will Contact You Soon..."))
+                        .catch(error => console.error('Error!', error.message))
+                })
+            </script>
+
+
+
+</body>
+
+</html>
